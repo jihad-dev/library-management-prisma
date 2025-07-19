@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: library-api
+    env: node
+    branch: main
+    buildCommand: |
+      npm install
+      npx prisma generate
+      npx prisma migrate deploy
+      npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://library_prisma_6m7n_user:swUzuEfHPxAyVjiSYcfViRK4DLNxpQS8@dpg-d1tqghruibrs73fpubhg-a.oregon-postgres.render.com/library_prisma_6m7n
+
