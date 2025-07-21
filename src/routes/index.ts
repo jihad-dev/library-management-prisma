@@ -6,20 +6,11 @@ import { borrowRoutes } from "../modules/Borrow/borrow.route";
 const router = express.Router();
 
 const moduleRoutes = [
-    {
-        path: '/books',
-        route: bookRoutes
-    },
-    {
-        path: '/members',
-        route: memberRoutes
-    },
-    {
-        path: '/',
-        route: borrowRoutes
-    }
+    { path: '/books', route: bookRoutes },
+    { path: '/members', route: memberRoutes },
+    { path: '/borrow', route: borrowRoutes },
+];
 
-]
 
 moduleRoutes.forEach(route => router.use(route.path, route.route));
 
